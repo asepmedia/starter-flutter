@@ -3,9 +3,11 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
+import 'package:todoapp/providers/auth_provider.dart';
 import 'package:todoapp/providers/counter_provider.dart';
 import 'package:todoapp/providers/task_provider.dart';
 import 'package:todoapp/screens/main_screen.dart';
+import 'package:todoapp/screens/welcome_screen.dart';
 import 'package:todoapp/services/http_service.dart';
 import 'package:todoapp/services/task_service.dart';
 import 'routes/route.dart' as RouteCotainer;
@@ -26,6 +28,7 @@ Future<void> main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => CounterProvider()),
         ChangeNotifierProvider(create: (_) => TaskProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: MyApp(),
     ),
@@ -45,7 +48,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blueGrey,
       ),
       // home: AuthLoginScreen(),
-      initialRoute: (MainScreen).toString(),
+      initialRoute: (WelcomeScreen).toString(),
       routes: RouteCotainer.Route.lists(),
     );
   }
