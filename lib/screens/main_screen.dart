@@ -33,11 +33,17 @@ class MainScreen extends StatelessWidget {
                           SizedBox(
                             height: ScreenHelper.fontSize(20, scale),
                           ),
-                          Text(
-                            "Todo Application",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: ScreenHelper.fontSize(45, scale)),
+                          GestureDetector(
+                            onTap: () {
+                              taskProvider.fetchTask();
+                            },
+                            child: Text(
+                              "Todo Application",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: ScreenHelper.fontSize(45, scale)),
+                            ),
                           ),
                           SizedBox(
                             height: ScreenHelper.fontSize(2, scale),
@@ -46,6 +52,7 @@ class MainScreen extends StatelessWidget {
                             "Simple Todo App for Practice",
                             style: TextStyle(
                                 fontWeight: FontWeight.w300,
+                                color: Colors.white60,
                                 fontSize: ScreenHelper.fontSize(18, scale)),
                           )
                         ]),

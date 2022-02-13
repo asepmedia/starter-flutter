@@ -6,7 +6,10 @@ import 'package:provider/provider.dart';
 import 'package:todoapp/providers/counter_provider.dart';
 import 'package:todoapp/providers/task_provider.dart';
 import 'package:todoapp/screens/main_screen.dart';
+import 'package:todoapp/services/http_service.dart';
+import 'package:todoapp/services/task_service.dart';
 import 'routes/route.dart' as RouteCotainer;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // Bracket Function
 // void main() {
@@ -14,7 +17,8 @@ import 'routes/route.dart' as RouteCotainer;
 // }
 
 //Arrow function
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
   runApp(
     /// Providers are above [MyApp] instead of inside it, so that tests
     /// can use [MyApp] while mocking the providers
