@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import 'package:todoapp/providers/auth_provider.dart';
 import 'package:todoapp/providers/counter_provider.dart';
+import 'package:todoapp/providers/post_provider.dart';
+import 'package:todoapp/providers/tab_provider.dart';
 import 'package:todoapp/providers/task_provider.dart';
 import 'package:todoapp/screens/main_screen.dart';
 import 'package:todoapp/screens/welcome_screen.dart';
@@ -29,6 +31,8 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => CounterProvider()),
         ChangeNotifierProvider(create: (_) => TaskProvider()),
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => PostProvider()),
+        ChangeNotifierProvider(create: (_) => TabProvider()),
       ],
       child: MyApp(),
     ),

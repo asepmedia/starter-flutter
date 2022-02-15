@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoapp/providers/auth_provider.dart';
-import 'package:todoapp/screens/welcome_screen.dart';
+import 'package:todoapp/screens/home_screen.dart';
 import 'package:todoapp/utils/screen_helper.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class LoginScreen extends StatelessWidget {
     var scale = ScreenHelper.scale(context);
 
     _getStartedHandler() {
-      ScreenHelper.navigateTo(context, name: (WelcomeScreen).toString());
+      ScreenHelper.navigateTo(context, name: (HomeScreen).toString());
     }
 
     return Consumer<AuthProvider>(builder: (context, authProvider, child) {

@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ScreenHelper {
+  static double percentOf(double value, double percentage) {
+    return value * (percentage / 100);
+  }
+
   static double scale(BuildContext ctx) {
     return MediaQuery.of(ctx).textScaleFactor;
   }
